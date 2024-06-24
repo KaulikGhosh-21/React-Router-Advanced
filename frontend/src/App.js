@@ -57,7 +57,7 @@ function App() {
               id: "event-detail",
               children: [
                 {
-                  path: "",
+                  index: true,
                   element: <EventDetail />,
                   action: deleteEventAction,
                 },

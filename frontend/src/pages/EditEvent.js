@@ -3,7 +3,7 @@ import EventForm from "../components/EventForm";
 
 export default function EditEvent() {
   const eventDetail = useRouteLoaderData("event-detail");
-  return <EventForm event={eventDetail.event} method="patch" />;
+  return <EventForm event={eventDetail.event} />;
 }
 
 export async function editEventAction({ request, params }) {
@@ -14,10 +14,9 @@ export async function editEventAction({ request, params }) {
     date: data.get("date"),
     description: data.get("description"),
   };
-  console.log(data);
   const eventId = params.eventId;
-  const response = await fetch(`http://localhost:8080/events`, {
-    method: "post",
+  const response = await fetch(`http://localhost:8080/events/${eventId}`, {
+    method: "PATCH",
     headers: {
       "Content-Type": "application/json",
     },
