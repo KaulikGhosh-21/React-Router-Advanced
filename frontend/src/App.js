@@ -8,7 +8,8 @@ import EventDetail, {
   loadEventDetailAction,
 } from "./pages/EventDetail";
 import NewEvent from "./pages/NewEvent";
-import EditEvent, { editEventAction } from "./pages/EditEvent";
+import EditEvent from "./pages/EditEvent";
+import { eventAction } from "./components/EventForm";
 
 // Challenge / Exercise
 
@@ -64,14 +65,14 @@ function App() {
                 {
                   path: "edit",
                   element: <EditEvent />,
-                  action: editEventAction,
+                  action: eventAction,
                 },
               ],
             },
             {
               path: "new",
               element: <NewEvent />,
-              action: editEventAction,
+              action: eventAction,
             },
           ],
         },
